@@ -1,11 +1,9 @@
 """
 Mask R-CNN
-Train on the nuclei segmentation dataset from the
-Kaggle 2018 Data Science Bowl
-https://www.kaggle.com/c/data-science-bowl-2018/
 
 Licensed under the MIT License (see LICENSE for details)
 Written by Waleed Abdulla
+Modified by Darko Lukic
 
 ------------------------------------------------------------
 
@@ -98,13 +96,13 @@ class LeavesConfig(Config):
 
     # Input image resizing
     # Random crops of size 512x512
-    IMAGE_RESIZE_MODE = "crop"
+    IMAGE_RESIZE_MODE = "scale"
     IMAGE_MIN_DIM = 512
     IMAGE_MAX_DIM = 512
     IMAGE_MIN_SCALE = 2.0
 
     # Length of square anchor side in pixels
-    RPN_ANCHOR_SCALES = (8, 16, 32, 64, 128)
+    RPN_ANCHOR_SCALES = (4, 16, 32, 64, 128)
 
     # ROIs kept after non-maximum supression (training and inference)
     POST_NMS_ROIS_TRAINING = 1000
@@ -118,7 +116,7 @@ class LeavesConfig(Config):
     RPN_TRAIN_ANCHORS_PER_IMAGE = 64
 
     # Image mean (RGB)
-    MEAN_PIXEL = np.array([43.53, 39.56, 48.22])
+    MEAN_PIXEL = np.array([75.67, 76.75, 42.75])
 
     # If enabled, resizes instance masks to a smaller size to reduce
     # memory load. Recommended when using high-resolution images.
