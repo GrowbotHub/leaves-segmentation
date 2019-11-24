@@ -96,7 +96,7 @@ class LeavesConfig(Config):
 
     # Input image resizing
     # Random crops of size 512x512
-    IMAGE_RESIZE_MODE = "scale"
+    IMAGE_RESIZE_MODE = "square"
     IMAGE_MIN_DIM = 512
     IMAGE_MAX_DIM = 512
     IMAGE_MIN_SCALE = 2.0
