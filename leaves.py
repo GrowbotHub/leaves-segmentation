@@ -102,7 +102,7 @@ class LeavesConfig(Config):
     IMAGE_MIN_SCALE = 2.0
 
     # Length of square anchor side in pixels
-    RPN_ANCHOR_SCALES = (4, 16, 32, 64, 128)
+    RPN_ANCHOR_SCALES = (8, 16, 32, 64, 128)
 
     # ROIs kept after non-maximum supression (training and inference)
     POST_NMS_ROIS_TRAINING = 1000
@@ -116,7 +116,7 @@ class LeavesConfig(Config):
     RPN_TRAIN_ANCHORS_PER_IMAGE = 64
 
     # Image mean (RGB)
-    MEAN_PIXEL = np.array([75.67, 76.75, 42.75])
+    MEAN_PIXEL = np.array([127, 170, 46])
 
     # If enabled, resizes instance masks to a smaller size to reduce
     # memory load. Recommended when using high-resolution images.
@@ -131,10 +131,10 @@ class LeavesConfig(Config):
     TRAIN_ROIS_PER_IMAGE = 128
 
     # Maximum number of ground truth instances to use in one image
-    MAX_GT_INSTANCES = 200
+    MAX_GT_INSTANCES = 50
 
     # Max number of final detections per image
-    DETECTION_MAX_INSTANCES = 400
+    DETECTION_MAX_INSTANCES = 50
 
 
 class LeavesInferenceConfig(LeavesConfig):
